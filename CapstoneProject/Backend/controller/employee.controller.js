@@ -24,5 +24,21 @@ let viewOrders = (req,res)=>{
     })
 }
 
+let updateOrderStatus = (req,res)=>{
+    let oid = req.body.oid;
+    let updateStatus = req.body.status;
+    orderModel.updateMany({_id:oid}, {$set:{status:updateStatus}},(err,result)=>{
+        if(!err){
+            if(result.nModified>0){
+                res.send("Status updated successfully");
+            }else{
+                res.send("Record is not available");
+            }
+        }else{
+            res.send("Error generated "+err);
+        }
+    })
+}
 
-module.exports = {sendRequest, viewOrders}
+
+module.exports = {sendRequest, viewOrders, updateOrderStatus}

@@ -5,6 +5,7 @@ var requestSchema = new mongoose.Schema({
     request:String
 });
 var orderSchema = new mongoose.Schema({
+    _id:Number,
     userID:Number,
     items: Array,
     amount:Number,
