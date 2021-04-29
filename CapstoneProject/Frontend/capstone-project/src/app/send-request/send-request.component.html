@@ -1,0 +1,8 @@
+<div>
+    <form #requestRef="ngForm" (ngSubmit)="storeRequest(requestRef.value)">
+        <label>Type Request</label>
+        <input type="text" name="request" ngModel><br/>
+        <input type="submit" value="store"/>
+        <input type="reset" value="reset"/>
+    </form>
+</div>
