@@ -1,4 +1,5 @@
-let requestModel = require("../model/employee.model.js");
+var {requestModel} = require("../model/employee.model");
+var {orderModel} = require("../model/employee.model");
 
 let sendRequest = (req,res)=> {
     let request = new requestModel({
@@ -15,5 +16,13 @@ let sendRequest = (req,res)=> {
     })
 }
 
+let viewOrders = (req,res)=>{
+    orderModel.find({},(err,result)=>{
+        if(!err){
+            res.json(result);
+        }
+    })
+}
 
-module.exports = {sendRequest}
+
+module.exports = {sendRequest, viewOrders}

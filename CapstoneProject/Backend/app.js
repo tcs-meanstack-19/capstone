@@ -32,6 +32,7 @@ var Employee = require("./router/employee.router.js")
 //Middleware 
 
 // http://localhost:9090/employee/sendRequest
+// http://localhost:9090/employee/viewOrders
 app.use("/employee",Employee)
 
 

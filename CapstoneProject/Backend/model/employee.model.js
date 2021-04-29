@@ -1,12 +1,20 @@
-let mongoose = require("mongoose");
+var mongoose = require("mongoose");
 mongoose.Promise = global.Promise;
 
-let requestSchema = mongoose.Schema({
-    //_id:Number,
+var requestSchema = new mongoose.Schema({
     request:String
-})
+});
+var orderSchema = new mongoose.Schema({
+    userID:Number,
+    items: Array,
+    amount:Number,
+    status:String
+});
 
-let requestModel = mongoose.model("", requestSchema, "Requests");
+const requestModel = mongoose.model('requests', requestSchema)
+const orderModel = mongoose.model('orders', orderSchema)
+// var requestModel = mongoose.model("", requestSchema, "Requests");
+// var orderModel = mongoose.model("", orderSchema, "Orders");
 
 
-module.exports = requestModel
+module.exports = {requestModel, orderModel}
