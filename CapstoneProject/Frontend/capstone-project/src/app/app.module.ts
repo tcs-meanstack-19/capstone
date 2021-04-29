@@ -16,6 +16,8 @@ import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,6 +25,7 @@ import { AppRoutingModule } from './app-routing.module';
     SignUpComponent,
     SignInComponent,
     UserProfileComponent
+   
   ],
   imports: [
     BrowserModule,
