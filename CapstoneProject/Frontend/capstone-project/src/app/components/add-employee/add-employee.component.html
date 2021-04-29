@@ -1,0 +1,61 @@
+<div class="container">
+
+    <div class="bodyContent">
+        <h3 style="margin:auto;text-align:center; color:darkorange; font-family:Verdana, Geneva, Tahoma, sans-serif;">Add Employee</h3>
+
+        <div class="addCourseForm">
+
+            <form #employeeRef="ngForm" (ngSubmit)="addEmployee(employeeRef.value)">
+                
+                <!--div class="row">
+                    <div class="col">
+                        <label>Employee ID: </label>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="eid" ngModel>
+                    </div>
+                </div-->
+
+                <div class="row">
+                    <div class="col">
+                        <label>First Name: </label>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="fname" ngModel>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label>Last Name:</label>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="lname" ngModel>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label>Email:</label>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="email" ngModel>
+                    </div>
+                </div>
+
+                <!--div class="row">
+                    <div class="col">
+                        <label>Password:</label>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="pwd" ngModel>
+                    </div>
+                </div-->
+                <br/>
+                <input type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" value="Add Employee">
+                <input type="reset"  class="btn btn-outline-danger" value="Reset">
+            </form>
+            {{addMsg}}
+        </div>
+    </div>
+</div>

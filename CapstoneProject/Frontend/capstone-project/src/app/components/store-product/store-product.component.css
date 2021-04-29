@@ -1,0 +1,51 @@
+.bodyContent{
+    margin:10px auto;
+
+    background-color:cornsilk;
+    width: 88%;
+    height: 75vh;
+
+    padding: 10px;
+    border-radius: 10px;
+}
+
+body {
+    height: 100%;
+    background: linear-gradient(cyan, orange 60%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+.addCourseForm{
+    width: fit-content;
+    height: fit-content;
+    
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+
+.menuarea{
+    text-align: center;
+    margin: 10px auto;
+    width: 88%;
+    height: max-content;
+    
+    border: 5px solid black;
+    border-radius: 10px;    
+}
+
+.menuareaItem{
+    width: max-content;
+    height: max-content;
+    margin: auto;
+    text-align: center;
+}
+
+li {
+    margin: 10px auto;
+    text-align: center;
+}

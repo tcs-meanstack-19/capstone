@@ -2,7 +2,6 @@ h1 {
     margin: auto;
     text-align: center;
     color:black;
-    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 a {
@@ -22,8 +21,7 @@ a {
 
 .classTable{
     border-collapse: separate !important;
-    border: 7px solid black;
-    border-radius: 30px;
+    border: 5px solid black;
     margin: 10px auto;
     text-align: center;
 }
@@ -32,40 +30,43 @@ a {
     height: 100%;
 } */
 .bodyContent{
+    margin:10px auto;
 
-    background-color: white;
+    background-color:cornsilk;
     width: 88%;
+    height: 75vh;
 
-    padding: 5px;
+    padding: 10px;
     border-radius: 2px;
 }
 
-.containers {
+body {
     height: 100%;
-    width:100%;
-    background: linear-gradient(white, orange 60%);
+    background: linear-gradient(cyan, orange 60%);
     background-repeat: no-repeat;
     background-attachment: fixed;
   }
 
 .addCourseForm{
-    width: 400px;
-    height: 200px;
-    border: 5px solid black;
+    width: fit-content;
+    height: fit-content;
 
+    padding: 20px;
     margin: auto;
     text-align: center;
+    font-weight: bold;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 
 }
 
 .menuarea{
     text-align: center;
-    
-    width: 100%;
+    margin: 10px auto;
+    width: 88%;
     height: max-content;
     
-    
-      
+    border: 5px solid black;
+    border-radius: 10px;    
 }
 
 .menuareaItem{
@@ -78,12 +79,4 @@ a {
 li {
     margin: 10px auto;
     text-align: center;
-}
-
-
-ul.navbar-nav a:hover { background-color: rgba(156, 17, 17, 0.678) !important; }
-
-.navbar-brand{
-    font-weight: bolder;
-    color: darkred;
 }

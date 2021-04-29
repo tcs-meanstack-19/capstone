@@ -1,0 +1,23 @@
+<div class="container">
+
+    <div class="bodyContent">
+        <h3 style="margin:auto;text-align:center; color:darkorange; font-family:Verdana, Geneva, Tahoma, sans-serif;">Delete Product</h3>
+        <div class="addCourseForm">
+            <form>
+                <div class="row">
+                    <div class="col">
+                        <label>Product ID: </label>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="pid" #idRef>
+                    </div>
+                </div>
+                
+                <br/>
+                <input type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" value="Delete Product" (click)="deleteById(idRef.value)">
+                <input type="reset" class="btn btn-outline-danger" value="Reset">
+            </form>
+            {{deleteMsg}}
+        </div>
+    </div>
+</div>
