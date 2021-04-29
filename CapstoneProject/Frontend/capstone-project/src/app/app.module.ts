@@ -6,12 +6,12 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule,HTTP_INTERCEPTORS } from '@angular/common/http';
 // components
 import { AppComponent } from './app.component';
-import { UserComponent } from './user/user.component';
-import { SignUpComponent } from './user/sign-up/sign-up.component';
+import { UserComponent } from './components/user/user.component';
+import { SignUpComponent } from './components/user/sign-up/sign-up.component';
 //routes
-import { SignInComponent } from './user/sign-in/sign-in.component';
-import { UserService } from './shared/user.service';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { SignInComponent } from './components/user/sign-in/sign-in.component';
+import { UserService } from './services/user.service';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 
