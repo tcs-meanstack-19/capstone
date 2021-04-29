@@ -13,6 +13,10 @@ export class UpdateOrderComponent implements OnInit {
   constructor(public employeeSer:EmployeeService) { }
 
   ngOnInit(): void {
+    
+  }
+
+  showOrders(){
     this.employeeSer.retrieveAllOrders().subscribe(result=>this.orders=result);
   }
 
