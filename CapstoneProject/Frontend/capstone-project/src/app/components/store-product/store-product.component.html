@@ -1,0 +1,61 @@
+<div class="container">
+
+    <div class="bodyContent">
+        <h3 style="margin:auto;text-align:center; color:darkorange; font-family:Verdana, Geneva, Tahoma, sans-serif;">Add a Product</h3>
+
+        <div class="addCourseForm">
+
+            <form #productRef="ngForm" (ngSubmit)="storeProduct(productRef.value)">
+                
+                <!--div class="row">
+                    <div class="col">
+                        <label>Product ID: </label>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="pid" ngModel>
+                    </div>
+                </div-->
+
+                <div class="row">
+                    <div class="col">
+                        <label>Product Name: </label>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="pname" ngModel>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label>Description:</label>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="desc" ngModel>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label>Price:</label>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="price" ngModel>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <label>Quantity:</label>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="quantity" ngModel>
+                    </div>
+                </div>
+                <br/>
+                <input type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" value="Add Product">
+                <input type="reset"  class="btn btn-outline-danger" value="Reset">
+            </form>
+            {{storeMsg}}
+        </div>
+    </div>
+</div>

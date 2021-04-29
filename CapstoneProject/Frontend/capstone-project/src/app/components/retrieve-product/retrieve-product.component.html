@@ -1,0 +1,33 @@
+<div class="container">
+    <style>
+        th {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    </style>
+    
+
+    <div class="bodyContent">
+    <h3 style="margin:auto;text-align:center; color:darkorange; font-family:Verdana, Geneva, Tahoma, sans-serif;">Products Available</h3>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Product ID</th>
+            <th scope="col">Product Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Price</th>
+            <th scope="col">Quantity</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let pp of products">
+                <td>{{pp._id}}</td>
+                <td>{{pp.pname}}</td>
+                <td>{{pp.desc}}</td>
+                <td>{{pp.price}}</td>
+                <td>{{pp.quantity}}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+</div>
