@@ -1,0 +1,16 @@
+<div>
+    <table border="1">
+            <tr>
+                <th>userID</th>
+                <th>Items</th>
+                <th>Amount</th>
+                <th>Status</th>
+            </tr>
+            <tr *ngFor="let op of orders">
+                    <td>{{op.userID}}</td>
+                    <td>{{op.items}}</td>
+                    <td>{{op.amount}}</td>
+                    <td>{{op.status}}</td>
+            </tr>
+    </table>
+</div>

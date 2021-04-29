@@ -6,11 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SendRequestComponent } from './send-request/send-request.component';
 import { HttpClientModule } from '@angular/common/http';
+import { UpdateOrderComponent } from './update-order/update-order.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SendRequestComponent
+    SendRequestComponent,
+    UpdateOrderComponent
   ],
   imports: [
     BrowserModule,
