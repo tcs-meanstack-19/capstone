@@ -10,6 +10,7 @@ import { Order } from '../model.order';
 export class UpdateOrderComponent implements OnInit {
 
   orders?:Array<Order>
+  updateMsg?:string;
   constructor(public employeeSer:EmployeeService) { }
 
   ngOnInit(): void {
@@ -19,5 +20,12 @@ export class UpdateOrderComponent implements OnInit {
   showOrders(){
     this.employeeSer.retrieveAllOrders().subscribe(result=>this.orders=result);
   }
+  updateStatus(orderRef:any){
+    console.log(orderRef);
+    this.employeeSer.updateOrderStatus(orderRef).subscribe((result:string)=>{
+      this.updateMsg=result;
+    });
+  }
+
 
 }

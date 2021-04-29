@@ -18,4 +18,16 @@ export class EmployeeService {
   retrieveAllOrders():Observable<Order[]>{
     return this.http.get<Order[]>("http://localhost:9090/employee/viewOrders")
   }
+
+  updateOrderStatus(orderRef:any):any{
+    return this.http.put("http://localhost:9090/employee/updateOrderStatus",orderRef,{responseType:'text'})
+  }
+
+  unlockUserStatus(userRef:any):any{
+    return this.http.put("http://localhost:9090/employee/unlockUser",userRef,{responseType:'text'})
+  }
+
+  changeEmployeePassword(empRef:any):any{
+    return this.http.put("http://localhost:9090/employee/changePassword",empRef,{responseType:'text'})
+  }
 }

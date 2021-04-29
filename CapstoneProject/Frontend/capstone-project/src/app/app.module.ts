@@ -7,12 +7,16 @@ import { AppComponent } from './app.component';
 import { SendRequestComponent } from './send-request/send-request.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateOrderComponent } from './update-order/update-order.component';
+import { UnlockUserComponent } from './unlock-user/unlock-user.component';
+import { ChangeEmpPassComponent } from './change-emp-pass/change-emp-pass.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SendRequestComponent,
-    UpdateOrderComponent
+    UpdateOrderComponent,
+    UnlockUserComponent,
+    ChangeEmpPassComponent
   ],
   imports: [
     BrowserModule,

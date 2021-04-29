@@ -1,0 +1,9 @@
+<div>
+    <form #userRef="ngForm" (ngSubmit)="unlockUser(userRef.value)">
+        <label>User Id</label>
+        <input type="text" name="uid" ngModel/><br/>
+        <label>Status</label>
+        <input type="text" name="status" ngModel/><br/>
+        <input type="submit" value="Unlock User"/>
+    </form>
+</div>

@@ -5,6 +5,8 @@ let EmployeeController = require("../controller/employee.controller.js");
 //mapping sub path with http method
 router.post("/sendRequest",EmployeeController.sendRequest);
 router.get("/viewOrders", EmployeeController.viewOrders);
-router.put("/updateOrderStatus", EmployeeController.updateOrderStatus)
+router.put("/updateOrderStatus", EmployeeController.updateOrderStatus);
+router.put("/unlockUser", EmployeeController.unlockUser);
+router.put("/changePassword", EmployeeController.changePassword);
 
 module.exports=router;

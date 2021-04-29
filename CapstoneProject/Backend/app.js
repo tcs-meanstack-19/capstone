@@ -34,6 +34,8 @@ var Employee = require("./router/employee.router.js")
 // http://localhost:9090/employee/sendRequest
 // http://localhost:9090/employee/viewOrders
 // http://localhost:9090/employee/updateOrderStatus    update status using pid {"pid":103,"status":"delivered"}
+// http://localhost:9090/employee/unlockUser            update status with uid
+// http://localhost:9090/employee/changePassword        update password with eid
 app.use("/employee",Employee)
 
 

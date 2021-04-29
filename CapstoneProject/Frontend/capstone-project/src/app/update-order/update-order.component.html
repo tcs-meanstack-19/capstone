@@ -1,4 +1,11 @@
 <div>
+    <form #orderRef="ngForm" (ngSubmit)="updateStatus(orderRef.value)">
+        <label>Order Id</label>
+        <input type="text" name="oid" ngModel/><br/>
+        <label>Status</label>
+        <input type="text" name="status" ngModel/><br/>
+        <input type="submit" value="Update the Status"/>
+    </form>
     <form #Ref="ngForm" (ngSubmit)="showOrders()">
         <input type="submit" value="View Orders"/>
     </form>

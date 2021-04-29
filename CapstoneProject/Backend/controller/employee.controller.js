@@ -1,5 +1,7 @@
 var {requestModel} = require("../model/employee.model");
 var {orderModel} = require("../model/employee.model");
+var {userModel} = require("../model/employee.model");
+var {empModel} = require("../model/employee.model");
 
 let sendRequest = (req,res)=> {
     let request = new requestModel({
@@ -40,5 +42,36 @@ let updateOrderStatus = (req,res)=>{
     })
 }
 
+let unlockUser = (req,res)=>{
+    let uid = req.body.uid;
+    let unlock = req.body.status;
+    userModel.updateMany({_id:uid}, {$set:{status:unlock}},(err,result)=>{
+        if(!err){
+            if(result.nModified>0){
+                res.send("User unlocked successfully");
+            }else{
+                res.send("Failed to unlock user");
+            }
+        }else{
+            res.send("Error generated "+err);
+        }
+    })
+}
+let changePassword = (req,res)=>{
+    let eid = req.body.eid;
+    let changePass = req.body.password;
+    empModel.updateMany({_id:eid}, {$set:{password:changePass}},(err,result)=>{
+        if(!err){
+            if(result.nModified>0){
+                res.send("Password changed successfully");
+            }else{
+                res.send("Failed to change passworrd");
+            }
+        }else{
+            res.send("Error generated "+err);
+        }
+    })
+}
 
-module.exports = {sendRequest, viewOrders, updateOrderStatus}
+
+module.exports = {sendRequest, viewOrders, updateOrderStatus, unlockUser, changePassword}

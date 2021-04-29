@@ -1,0 +1,9 @@
+<div>
+    <form #empRef="ngForm" (ngSubmit)="changePassword(empRef.value)">
+        <label>Employee Id</label>
+        <input type="text" name="eid" ngModel/><br/>
+        <label>New Password</label>
+        <input type="text" name="password" ngModel/><br/>
+        <input type="submit" value="Change Password"/>
+    </form>
+</div>
