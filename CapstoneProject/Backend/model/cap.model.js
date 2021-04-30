@@ -23,8 +23,8 @@ let EmployeeSchema = mongoose.Schema({
 
 })
 
-let ProductModel = mongoose.model("products",ProductSchema);
-let RequestModel = mongoose.model("requests",RequestSchema);
-let EmployeeModel = mongoose.model("employee",EmployeeSchema);
+let ProductModel = mongoose.model("products",ProductSchema,"products");
+let RequestModel = mongoose.model("requests",RequestSchema,"requests");
+let EmployeeModel = mongoose.model("employees",EmployeeSchema,"employees");
 
 module.exports = {ProductModel,RequestModel,EmployeeModel}

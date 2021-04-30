@@ -1,36 +1,25 @@
+require('./config/config');
+require('./model/db');
+require('./config/passportConfig');
 //Load all required modules 
-let app = require("express")();
-let bodyParser = require("body-parser");
-let mongoose = require("mongoose");
-let cors = require("cors");
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const passport = require('passport');
 
+const rtsIndex = require('./router/index.router');
 
-//Database URL Details 
-//Replace the link with MongoDB URL (MONGODB_URI)
-let url = "mongodb+srv://grocers-capstone:group19DBs@grocers-cluster.7ad9y.mongodb.net/myFirstDatabase&w=majority";
+var app = express();
 
 //middleware enable data from post method.
 app.use(bodyParser.urlencoded({extended:true}));    // enable body part data  
 app.use(bodyParser.json());                         // json data. 
-app.use(cors());           // enable cors policy 
-
-//Database connection without warning 
-const mongooseDbOption ={       // to avoid warning 
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}
-mongoose.connect(url,mongooseDbOption);   //ready to connect 
-
-//Connect the data 
-mongoose.connection
-
+app.use(cors());    // enable cors policy 
+app.use(passport.initialize());
+app.use('/api', rtsIndex);
+       
 //link to router module like a import concept. 
 var Product = require("./router/cap.router.js");
-
-//URL 
-
-
-//Middleware 
 
 // http://localhost:9090/Products/allProductDetails   Get App Product Details 
 // http://localhost:9090/Products/retrieveProductById/102   Get App Product Details by Id  
@@ -41,9 +30,15 @@ var Product = require("./router/cap.router.js");
 app.use("/products",Product)
 app.use("/requests",Product)
 app.use("/employee",Product)
-//app.use("/customer",Customer)
 
+// error handler
+app.use((err, req, res, next) => {
+    if (err.name === 'ValidationError') {
+        var valErrors = [];
+        Object.keys(err.errors).forEach(key => valErrors.push(err.errors[key].message));
+        res.status(422).send(valErrors)
+    }
+});
 
-
-app.listen(9090,()=>console.log("Server running on port number 9090"));
-
+// start server
+app.listen(process.env.PORT, () => console.log(`Server started at port : ${process.env.PORT}`));

@@ -12,21 +12,21 @@ export class ProductsService {
   constructor(public http: HttpClient) { }
 
   storeProductDetailsInfo(productRef:any){
-    this.http.post("http://localhost:9090/Products/storeProductDetails",productRef,{responseType:"text"}).
+    this.http.post("http://localhost:9090/products/storeProductDetails",productRef,{responseType:"text"}).
     subscribe(result=>console.log(result),error=>console.log(error));
   }
 
   retrieveAllProductDetails():Observable<Product[]>{
-     return this.http.get<Product[]>("http://localhost:9090/Products/allProductDetails")
+     return this.http.get<Product[]>("http://localhost:9090/products/allProductDetails")
   }
 
   //by default all HttpClient method return type is observable with json format data. 
   deleteProductById(id:any):any{
-    return this.http.delete("http://localhost:9090/Products/deleteProductById/"+id,{responseType:'text'});
+    return this.http.delete("http://localhost:9090/products/deleteProductById/"+id,{responseType:'text'});
   }
 
   updateProductPrice(productRef:any):any{
-    return this.http.put("http://localhost:9090/Products/updateProductPrice",productRef,{responseType:'text'})
+    return this.http.put("http://localhost:9090/products/updateProductPrice",productRef,{responseType:'text'})
   }
 
 }

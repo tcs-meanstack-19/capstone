@@ -7,6 +7,11 @@ import { RetrieveProductComponent } from './components/retrieve-product/retrieve
 import { StoreProductComponent } from './components/store-product/store-product.component';
 import { UpdateProductComponent } from './components/update-product/update-product.component';
 import { ViewRequestsComponent } from './components/view-requests/view-requests.component';
+import { UserComponent } from './components/user/user.component';
+import { SignUpComponent } from './components/user/sign-up/sign-up.component';
+import { SignInComponent } from './components/user/sign-in/sign-in.component';
+import { AuthGuard } from './auth/auth.guard';
+import { ShowProductComponent } from './components/show-product/show-product.component';
 
 
 const routes: Routes = [
@@ -18,7 +23,20 @@ const routes: Routes = [
   {path:"\AddEmp",component:AddEmployeeComponent},
   {path:"\DelEmp",component:DeleteEmployeeComponent},
  // {path:"\Logout",component:LogoutComponent},
-  {path:"",redirectTo:"\login", pathMatch:"full"}
+  {path:"",redirectTo:"\login", pathMatch:"full"},
+  {path: 'signup', component: UserComponent,
+        children: [{ path: '', component: SignUpComponent }]
+    },
+    {
+        path: 'signin', component: UserComponent,
+        children: [{ path: '', component: SignInComponent }]
+    },
+    {
+        path: 'shop-product', component: ShowProductComponent, canActivate:[AuthGuard]
+    },
+    {
+        path: '', redirectTo: '/signin', pathMatch: 'full'
+    }
 ];
 
 @NgModule({
