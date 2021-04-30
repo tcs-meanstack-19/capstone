@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
+import { Router } from "@angular/router";
 import { environment } from '../../environments/environment';
 import { User } from '../models/user.model';
 import { JwtHelperService } from '@auth0/angular-jwt';
@@ -30,7 +30,7 @@ export class UserService {
   private decodedToken
 
   noAuthHeader = { headers: new HttpHeaders({ 'NoAuth': 'True' }) };
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient, private router:Router) { 
     console.log(this.decodedToken)
     this.decodedToken = JSON.parse(localStorage.getItem('auth_meta')) || new DecodedToken();
   }
@@ -46,8 +46,6 @@ export class UserService {
   getUserProfile() {
     return this.http.get(environment.apiBaseUrl + '/userProfile');
   }
-
-  
 
 
   //Helper Methods
@@ -83,7 +81,7 @@ export class UserService {
     return this.decodedToken.username
   }
 
-  getUserById(): string {
+  public getUserById(): string {
     return this.decodedToken._id
   }
  
@@ -95,5 +93,12 @@ export class UserService {
     else
       return false;
   }
+
+  userLogOut() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('auth_meta');
+    this.router.navigate(['signin']);
+  }
+
 }
 

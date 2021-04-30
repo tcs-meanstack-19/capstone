@@ -18,11 +18,18 @@ import { DeleteProductComponent } from './components/delete-product/delete-produ
 import { UpdateProductComponent } from './components/update-product/update-product.component';
 import { RetrieveProductComponent } from './components/retrieve-product/retrieve-product.component';
 import { ViewRequestsComponent } from './components/view-requests/view-requests.component';
-import { FormsModule } from '@angular/forms';
 import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
 import { DeleteEmployeeComponent } from './components/delete-employee/delete-employee.component';
-import { ShowProductComponent } from './components/show-product/show-product.component';
 
+// import { AuthModule } from './auth/auth.module';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CartComponent } from './components/cart/cart.component';
+import { ShowProductComponent } from './components/show-product/show-product.component';
+import {NgxPaginationModule} from 'ngx-pagination';
+import { RaiseTicketComponent } from './components/raise-ticket/raise-ticket.component';
+import { HeaderNavbarComponent } from './components/header-navbar/header-navbar.component';
 
 @NgModule({
   declarations: [
@@ -37,14 +44,28 @@ import { ShowProductComponent } from './components/show-product/show-product.com
     UserComponent,
     SignUpComponent,
     SignInComponent,
-    ShowProductComponent
-   
+    CartComponent,
+    ShowProductComponent,
+    RaiseTicketComponent,
+    HeaderNavbarComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    NgxPaginationModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(
+      {
+        positionClass:"toast-top-right",
+        closeButton: true,
+        preventDuplicates: true,
+      },
+    ),
+    // AuthModule            take from other 
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

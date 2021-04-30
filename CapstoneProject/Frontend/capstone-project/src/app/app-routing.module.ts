@@ -11,8 +11,10 @@ import { UserComponent } from './components/user/user.component';
 import { SignUpComponent } from './components/user/sign-up/sign-up.component';
 import { SignInComponent } from './components/user/sign-in/sign-in.component';
 import { AuthGuard } from './auth/auth.guard';
+import { CartComponent } from './components/cart/cart.component';
+import { RaiseTicketComponent } from './components/raise-ticket/raise-ticket.component';
 import { ShowProductComponent } from './components/show-product/show-product.component';
-
+import { Auth2Guard } from './auth/auth2.guard';
 
 const routes: Routes = [
   {path:"\Retrieve",component:RetrieveProductComponent},
@@ -29,18 +31,19 @@ const routes: Routes = [
     },
     {
         path: 'signin', component: UserComponent,
-        children: [{ path: '', component: SignInComponent }]
-    },
-    {
-        path: 'shop-product', component: ShowProductComponent, canActivate:[AuthGuard]
+        children: [{ path: '', component: SignInComponent }], canActivate: [Auth2Guard]
     },
     {
         path: '', redirectTo: '/signin', pathMatch: 'full'
-    }
-];
+    },
+    { path: 'shop-products', component: ShowProductComponent, canActivate: [AuthGuard]},
+    { path: 'cart', component: CartComponent},
+    { path: 'raiseTicket', component:RaiseTicketComponent}
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
+  providers: []  // mention the 
 })
 export class AppRoutingModule { }

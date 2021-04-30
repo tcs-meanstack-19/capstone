@@ -1,3 +1,4 @@
+
 <div class="container">
   <!--h1><a href="app.component.html">Capstone Project</a></h1-->
   <div class="menuarea">
@@ -70,4 +71,24 @@
       </div>
     </div>
 </div>
-<router-outlet></router-outlet>
+<!-- <router-outlet></router-outlet> -->
+
+
+<div class="d-flex justify-content-end mr-5">
+  <button *ngIf="authService.isLoggedIn(); else elseBlock" (click)="logout()" class="btn bg-danger text-light my-2 my-sm-0" 
+    type="submit">Logout</button>
+</div>
+<ng-template #elseBlock class="d-flex">  
+  <div class="container-fluid">
+      <div class="row">
+        <div class="col"> 
+          <app-header-navbar></app-header-navbar>
+      </div>
+    </div>
+  </div>
+</ng-template>
+<div style="margin-top: 20px;">
+  <router-outlet></router-outlet>
+</div>
+
+

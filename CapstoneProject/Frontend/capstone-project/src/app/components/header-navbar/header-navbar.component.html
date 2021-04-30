@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark float-right">
+    <a class="navbar-brand text-light" href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag-fill mb-2" viewBox="0 0 16 16">
+            <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/>
+          </svg> 
+    </a>
+    <h4 class="text-light mt-1 mr-3">
+        Grocers
+    </h4>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse mr-2" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle btn btn-outline-primary bg-primary my-2 my-sm-0 text-light" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Login
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item font-weight-bold" href="#">User</a>
+                <a class="dropdown-item font-weight-bold" href="#">Employee</a>
+                <a class="dropdown-item font-weight-bold" href="#">Admin</a>
+            </div>
+            </li>
+        </ul>
+    </div>
+    <form class="form-inline my-2 my-lg-0 float-right">
+        <button class="btn btn-outline-warning my-2 my-sm-0" type="submit" [routerLink]="['/raiseTicket']">Raise Ticket</button>
+    </form>
+  </nav>

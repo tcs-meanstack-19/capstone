@@ -75,3 +75,17 @@ userSchema.methods.generateJwt = function () {
 }
 
 mongoose.model('User', userSchema);
+
+// Raise Ticket Schema
+
+mongoose.Promise = global.Promise;      // creating reference. 
+
+let RaiseTicketSchema = mongoose.Schema({
+    _id: String,
+    msg: String
+})
+
+let RaiseTicketModel = mongoose.model("tickets", RaiseTicketSchema);
+
+
+module.exports = RaiseTicketModel;
