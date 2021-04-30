@@ -53,11 +53,24 @@ let updateOrderStatus = (req,res)=>{
 
 let unlockUser = (req,res)=>{
     let uid = req.body.uid;
-    let unlock = req.body.status;
-    userModel.updateMany({_id:uid}, {$set:{status:unlock}},(err,result)=>{
+    //let unlock = req.body.status;
+    userModel.updateMany({_id:uid}, {$set:{status:false}},(err,result)=>{  //setting the status to false once unlock button is pressed
         if(!err){
             if(result.nModified>0){
-                res.send("User unlocked successfully");
+                //deleting the raised ticket after unlocking
+                raiseTicketModel.deleteOne({_id:uid},(err,result)=> {
+                    if(!err){
+                            if(result.deletedCount>0){
+                                res.send("User unlocked successfully")
+                            }else {
+                                res.send("Record not present");
+                            }
+                    }else {
+                        res.send("Error generated "+err);
+                    }
+                })
+
+               // res.send("User unlocked successfully");
             }else{
                 res.send("Failed to unlock user");
             }

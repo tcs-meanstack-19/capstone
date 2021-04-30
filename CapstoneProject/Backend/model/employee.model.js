@@ -15,7 +15,7 @@ var orderSchema = new mongoose.Schema({
 var userSchema = new mongoose.Schema({
     _id:String,
     name:String,
-    status:String
+    status:Boolean
 });
 //emp Schema
 var empSchema = new mongoose.Schema({

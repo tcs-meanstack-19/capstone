@@ -16,11 +16,10 @@ export class UnlockUserComponent implements OnInit {
   }
 
   unlockUser(userRef:any){
-    console.log(userRef);
-
+    
     this.employeeSer.unlockUserStatus(userRef).subscribe((result:any)=>{
       this.updateMsg=result;
-      console.log(this.updateMsg);
+      console.log(userRef);
     });
   }
 
