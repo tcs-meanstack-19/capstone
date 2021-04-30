@@ -11,11 +11,11 @@ import { SignUpComponent } from './components/user/sign-up/sign-up.component';
 //routes
 import { SignInComponent } from './components/user/sign-in/sign-in.component';
 import { UserService } from './services/user.service';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { AuthGuard } from './auth/auth.guard';
 import { AuthInterceptor } from './auth/auth.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
+import { ShowProductComponent } from './components/show-product/show-product.component';
 
 
 @NgModule({
@@ -24,7 +24,7 @@ import { AppRoutingModule } from './app-routing.module';
     UserComponent,
     SignUpComponent,
     SignInComponent,
-    UserProfileComponent
+    ShowProductComponent
    
   ],
   imports: [

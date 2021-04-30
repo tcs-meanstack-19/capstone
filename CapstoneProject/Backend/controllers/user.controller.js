@@ -63,5 +63,7 @@ module.exports.userProfile = (req, res, next) =>{
                 return res.status(200).json({ status: true, user : _.pick(user,['firstName','email']) });
         }
     );
-    console.log("Result is--->" +res)
+
+
+
 }

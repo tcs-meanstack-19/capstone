@@ -4,7 +4,7 @@ import { UserComponent } from './components/user/user.component';
 import { SignUpComponent } from './components/user/sign-up/sign-up.component';
 import { SignInComponent } from './components/user/sign-in/sign-in.component';
 import { AuthGuard } from './auth/auth.guard';
-import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { ShowProductComponent } from './components/show-product/show-product.component';
 
 const routes: Routes = [ {
         path: 'signup', component: UserComponent,
@@ -15,7 +15,7 @@ const routes: Routes = [ {
         children: [{ path: '', component: SignInComponent }]
     },
     {
-        path: 'userprofile', component: UserProfileComponent, canActivate:[AuthGuard]
+        path: 'shop-product', component: ShowProductComponent, canActivate:[AuthGuard]
     },
     {
         path: '', redirectTo: '/signin', pathMatch: 'full'

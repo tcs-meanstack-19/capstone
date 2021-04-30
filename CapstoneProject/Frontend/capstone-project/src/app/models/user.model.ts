@@ -1,10 +1,10 @@
 export class User {
-    firstName: string;
-    lastName: string;
-    email: string; 
-    password: string;
-    dob:string;
-    phoneno:string;
-    address: string;
-    status:boolean;
+    constructor(public firstName: string,
+        public lastName: string,
+        public email: string,
+        public password: string,
+        public dob:string,
+        public phoneno:string,
+        public address: string,
+        public status:boolean){}
 }
