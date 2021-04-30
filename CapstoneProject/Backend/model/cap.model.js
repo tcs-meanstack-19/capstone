@@ -10,7 +10,7 @@ let ProductSchema = mongoose.Schema({
 })
 
 let RequestSchema = mongoose.Schema({
-    _id:Number,
+    _id:String,
     desc:String
 })
 
