@@ -7,15 +7,6 @@
 
             <form #productRef="ngForm" (ngSubmit)="storeProduct(productRef.value)">
                 
-                <!--div class="row">
-                    <div class="col">
-                        <label>Product ID: </label>
-                    </div>
-                    <div class="col">
-                        <input type="text" name="pid" ngModel>
-                    </div>
-                </div-->
-
                 <div class="row">
                     <div class="col">
                         <label>Product Name: </label>
@@ -51,6 +42,15 @@
                         <input type="text" name="quantity" ngModel>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col">
+                        <label>Image Url:</label>
+                    </div>
+                    <div class="col">
+                        <input type="text" name="imgUrl" ngModel>
+                    </div>
+                </div>
+                
                 <br/>
                 <input type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" value="Add Product">
                 <input type="reset"  class="btn btn-outline-danger" value="Reset">
@@ -58,4 +58,5 @@
             {{storeMsg}}
         </div>
     </div>
+    <router-outlet></router-outlet>
 </div>

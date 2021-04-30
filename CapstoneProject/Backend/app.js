@@ -4,7 +4,6 @@ let bodyParser = require("body-parser");
 let mongoose = require("mongoose");
 let cors = require("cors");
 
-
 //Database URL Details 
 //Replace the link with MongoDB URL (MONGODB_URI)
 let url = "mongodb+srv://grocers-capstone:group19DBs@grocers-cluster.7ad9y.mongodb.net/myFirstDatabase&w=majority";
@@ -27,9 +26,6 @@ mongoose.connection
 //link to router module like a import concept. 
 var Product = require("./router/cap.router.js");
 
-//URL 
-
-
 //Middleware 
 
 // http://localhost:9090/Products/allProductDetails   Get App Product Details 
@@ -41,9 +37,5 @@ var Product = require("./router/cap.router.js");
 app.use("/products",Product)
 app.use("/requests",Product)
 app.use("/employee",Product)
-//app.use("/customer",Customer)
-
-
 
 app.listen(9090,()=>console.log("Server running on port number 9090"));
-

@@ -3,23 +3,6 @@
   <div class="menuarea">
       <div class="menuareaItem">
 
-        <!--ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="#" routerLink="Retrieve" >Show Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#" routerLink="Store" >Add Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#" routerLink="Delete" >Delete Products</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="#" routerLink="Update" >Update Products</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="#" routerLink="Requests">View Requests</a>
-              </li>
-        </ul-->
         <nav class="navbar navbar-expand-lg bg-light p-2 rounded">
           <a class="navbar-brand" href="#">Admin</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,22 +35,14 @@
                   </li>
                   
                   <li class="nav-item">
-                      <a class="nav-link mt-1 btn btn-danger text-white" type="button" href="#" data-toggle="modal" data-target="#myModal">Logout</a>
+                      <a class="nav-link mt-1 btn btn-danger text-white" type="button" href="#" routerLink="Login" data-toggle="modal" data-target="#myModal">Logout</a>
                   </li>
               </ul>
           </div>
       </nav>
-          <!--ul class="nav">
-              <li class="nav-item navLocation"><a class="nav-location" routerLink="Retrieve" >Show Products</a></li>
-              <li class="nav-item navLocation"><a class="nav-location" routerLink="Store" >Add Products</a></li>
-              <li class="nav-item navLocation"><a class="nav-location" routerLink="Delete" >Delete Products</a></li>
-              <li class="nav-item navLocation"><a class="nav-location" routerLink="Update" >Update Products</a></li>
-              <li class="nav-item navLocation"><a class="nav-location" routerLink="Requests">View Requests</a></li>
-              <li class="nav-item navLocation"><a class="nav-location" routerLink="AddEmp" >Add Employee</a></li>
-              <li class="nav-item navLocation"><a class="nav-location" routerLink="DelEmp">Delete Employee</a></li>
-              <li class="nav-item navLocation"><a class="nav-location" routerLink="Logout">Logout</a></li>
-          </ul-->
+         
       </div>
   </div>
+  <!--app-admin-signin></app-admin-signin-->
   <router-outlet></router-outlet>
 </div>

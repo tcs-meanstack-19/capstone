@@ -1,4 +1,3 @@
-
 let {ProductModel} = require("../model/cap.model.js");
 let {RequestModel} = require("../model/cap.model.js");
 let {EmployeeModel} = require("../model/cap.model.js");
@@ -11,7 +10,6 @@ let getProductDetails =(req,res)=> {
             res.json(result);
         }
     })
-
 }
 
 let getProductById = (req,res)=> {
@@ -38,7 +36,8 @@ let storeProductDetails = (req,res)=> {
         pname:req.body.pname,
         desc:req.body.desc,
         price:req.body.price,
-        quantity:req.body.quantity
+        quantity:req.body.quantity,
+        imgUrl:req.body.imgUrl
     });
 
     product.save((err,result)=> {
@@ -49,7 +48,6 @@ let storeProductDetails = (req,res)=> {
             res.send("Record didn't store ");
         }
     })
-
 }
 
 let deleteProductById= (req,res)=> {
@@ -65,25 +63,51 @@ let deleteProductById= (req,res)=> {
             res.send("Error generated "+err);
         }
     })
-
 }
 
 let updateProductPrice= (req,res)=> {
     let pid = req.body.pid;
     let updatedPrice = req.body.price;
     let updatedQuantity = req.body.quantity;
-    ProductModel.updateMany({_id:pid},{$set:{price:updatedPrice,quantity:updatedQuantity}},(err,result)=> {
-        if(!err){
-            if(result.nModified>0){
-                    res.send("Record updated succesfully")
+    if(req.body.quantity==null){
+        ProductModel.updateOne({_id:pid},{$set:{price:updatedPrice}},(err,result)=> {
+            if(!err){
+                if(result.nModified>0){
+                        res.send("Record updated succesfully")
+                }else {
+                        res.send("Record is not available");
+                }
             }else {
-                    res.send("Record is not available");
+                res.send("Error generated "+err);
             }
-        }else {
-            res.send("Error generated "+err);
-        }
-    })
-
+        })
+    }
+    if(req.body.price==null){
+        ProductModel.updateOne({_id:pid},{$set:{quantity:updatedQuantity}},(err,result)=> {
+            if(!err){
+                if(result.nModified>0){
+                        res.send("Record updated succesfully")
+                }else {
+                        res.send("Record is not available");
+                }
+            }else {
+                res.send("Error generated "+err);
+            }
+        })
+    }
+    else{
+        ProductModel.updateMany({_id:pid},{$set:{price:updatedPrice,quantity:updatedQuantity}},(err,result)=> {
+            if(!err){
+                if(result.nModified>0){
+                    res.send("Record updated succesfully")
+                }else {
+                    res.send("Record is not available");
+                }
+            }else {
+                res.send("Error generated "+err);
+            }
+        })
+    }
 }
 
 let getRequestDetails =(req,res)=> {
@@ -93,7 +117,6 @@ let getRequestDetails =(req,res)=> {
             res.json(result);
         }
     })
-
 }
 
 let addEmployeeDetails = (req,res)=> {
@@ -121,7 +144,6 @@ let addEmployeeDetails = (req,res)=> {
             res.send("Record didn't store ");
         }
     })
-
 }
 
 let deleteEmployeeById= (req,res)=> {
@@ -137,7 +159,6 @@ let deleteEmployeeById= (req,res)=> {
             res.send("Error generated "+err);
         }
     })
-
 }
 
 module.exports={getProductDetails,getProductById,storeProductDetails,deleteProductById,updateProductPrice,

@@ -6,12 +6,13 @@ let ProductSchema = mongoose.Schema({
     pname:String,
     desc:String,
     price:Number,
-    quantity:Number
+    quantity:Number,
+    imgUrl:String
 })
 
 let RequestSchema = mongoose.Schema({
-    _id:Number,
-    desc:String
+    _id:String,
+    request:String
 })
 
 let EmployeeSchema = mongoose.Schema({
@@ -20,7 +21,6 @@ let EmployeeSchema = mongoose.Schema({
     lname:String,
     email:String,
     pwd:String
-
 })
 
 let ProductModel = mongoose.model("products",ProductSchema);

@@ -16,5 +16,4 @@ export class RetrieveProductComponent implements OnInit {
     this.productSer.retrieveAllProductDetails().subscribe(result=>this.products=result);
   }
 
-
 }

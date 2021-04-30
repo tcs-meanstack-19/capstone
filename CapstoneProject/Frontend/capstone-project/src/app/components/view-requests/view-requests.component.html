@@ -1,4 +1,5 @@
 <div class="container">
+    
     <style>
         th {
             padding-left: 30px;
@@ -8,20 +9,22 @@
     
 
     <div class="bodyContent">
-    <h3 style="margin:auto;text-align:center; color:darkorange; font-family:Verdana, Geneva, Tahoma, sans-serif;">Products Available</h3>
+    <h3 style="margin:auto;text-align:center; color:darkorange; 
+    font-family:Verdana, Geneva, Tahoma, sans-serif;">Requests</h3>
     <table class="table table-striped">
         <thead class="thead-dark">
         <tr>
             <th scope="col">Request ID</th>         
-            <th scope="col">Description</th>
+            <th scope="col">Request Description</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let pp of requests">    
             <td>{{pp._id}}</td>
-            <td>{{pp.desc}}</td>
+            <td>{{pp.request}}</td>
         </tr>
         </tbody>
     </table>
     </div>
+    <router-outlet></router-outlet>
 </div>

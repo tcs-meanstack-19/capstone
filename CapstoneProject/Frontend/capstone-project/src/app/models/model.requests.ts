@@ -1,3 +1,3 @@
 export class Requests {
-    constructor(public _id:number,public desc:string){}
+    constructor(public _id:string,public request:string){}
 }

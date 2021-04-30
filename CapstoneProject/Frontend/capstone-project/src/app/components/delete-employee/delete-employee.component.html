@@ -1,5 +1,5 @@
 <div class="container">
-
+  
     <div class="bodyContent">
         <h3 style="margin:auto;text-align:center; color:darkorange; font-family:Verdana, Geneva, Tahoma, sans-serif;">Delete Employee</h3>
         <div class="addCourseForm">
@@ -12,9 +12,6 @@
                         <input type="text" name="eid" #idRef>
                     </div>
                 </div>
-                <!--label>Employee ID: </label>
-                <input type="text" name="eid" #idRef-->
-                
                 <br/>
                 <input type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" value="Delete Employee" (click)="deleteById(idRef.value)">
                 <input type="reset" class="btn btn-outline-danger" value="Reset">
@@ -22,4 +19,5 @@
             {{deleteMsg}}
         </div>
     </div>
+    <router-outlet></router-outlet>
 </div>

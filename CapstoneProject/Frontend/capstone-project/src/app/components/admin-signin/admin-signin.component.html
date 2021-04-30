@@ -1,0 +1,15 @@
+<div class = "adminsignin">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+        <div class="fadeIn first">
+            <img src="assets\img\adminlogo.png" id="icon" alt="User Icon">
+        </div>
+        <form #loginRef="ngForm" (ngSubmit)="checkAdmin(loginRef.value)">
+            <input type="text" id="username" class="fadeIn second" name="username" placeholder="Username" ngModel><br/><br/>
+            <input type="password" id="password" class="fadeIn third" name="password" placeholder="Password" ngModel><br/><br/>
+            <input type="submit" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"value="Log In">
+        </form>
+        {{msg}}
+        </div>
+    </div>
+</div>
