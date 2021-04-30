@@ -64,9 +64,7 @@ body {
     margin: 10px auto;
     width: 88%;
     height: max-content;
-    
-    border: 5px solid black;
-    border-radius: 10px;    
+     
 }
 
 .menuareaItem{
@@ -79,4 +77,12 @@ body {
 li {
     margin: 10px auto;
     text-align: center;
+}
+
+
+ul.navbar-nav a:hover { background-color: rgba(156, 17, 17, 0.678) !important; }
+
+.navbar-brand{
+    font-weight: bolder;
+    color: darkred;
 }

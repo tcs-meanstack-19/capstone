@@ -38,7 +38,8 @@ let storeProductDetails = (req,res)=> {
         pname:req.body.pname,
         desc:req.body.desc,
         price:req.body.price,
-        quantity:req.body.quantity
+        quantity:req.body.quantity,
+        imgUrl:req.body.imgUrl
     });
 
     product.save((err,result)=> {

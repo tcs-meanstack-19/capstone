@@ -30,6 +30,8 @@ import { ShowProductComponent } from './components/show-product/show-product.com
 import {NgxPaginationModule} from 'ngx-pagination';
 import { RaiseTicketComponent } from './components/raise-ticket/raise-ticket.component';
 import { HeaderNavbarComponent } from './components/header-navbar/header-navbar.component';
+import { AdminSigninComponent } from './components/admin-signin/admin-signin.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +50,8 @@ import { HeaderNavbarComponent } from './components/header-navbar/header-navbar.
     ShowProductComponent,
     RaiseTicketComponent,
     HeaderNavbarComponent,
+    AdminSigninComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

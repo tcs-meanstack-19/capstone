@@ -15,6 +15,9 @@ import { CartComponent } from './components/cart/cart.component';
 import { RaiseTicketComponent } from './components/raise-ticket/raise-ticket.component';
 import { ShowProductComponent } from './components/show-product/show-product.component';
 import { Auth2Guard } from './auth/auth2.guard';
+import { AdminSigninComponent } from './components/admin-signin/admin-signin.component';
+import { HeaderNavbarComponent } from './components/header-navbar/header-navbar.component';
+import { HeaderComponent } from './components/header/header.component';
 
 const routes: Routes = [
   {path:"\Retrieve",component:RetrieveProductComponent},
@@ -24,6 +27,8 @@ const routes: Routes = [
   {path:"\Requests",component:ViewRequestsComponent},
   {path:"\AddEmp",component:AddEmployeeComponent},
   {path:"\DelEmp",component:DeleteEmployeeComponent},
+  {path:"\Login",component:AdminSigninComponent},
+  {path:"\Header",component:HeaderComponent},
  // {path:"\Logout",component:LogoutComponent},
   {path:"",redirectTo:"\login", pathMatch:"full"},
   {path: 'signup', component: UserComponent,
