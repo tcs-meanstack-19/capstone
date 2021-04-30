@@ -1,4 +1,13 @@
 <div>
+    <ul>
+        <li><a routerLink="/sendRequest">Send Request</a></li>
+        <li><a routerLink="/orderUpdate">Update Order</a></li>
+        <li><a routerLink="/lockUser">Unlock User</a></li>
+        <li><a routerLink="/changeEmployeePassword">Edit Profile</a></li>
+        <li><a routerLink="">Logout</a></li>
+    </ul>
+</div>
+<div>
     <form #orderRef="ngForm" (ngSubmit)="updateStatus(orderRef.value)">
         <label>Order Id</label>
         <input type="text" name="oid" ngModel/><br/>

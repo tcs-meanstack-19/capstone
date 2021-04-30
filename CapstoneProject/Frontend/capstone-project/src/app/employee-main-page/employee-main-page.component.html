@@ -7,11 +7,3 @@
         <li><a routerLink="">Logout</a></li>
     </ul>
 </div>
-<div>
-    <form #requestRef="ngForm" (ngSubmit)="storeRequest(requestRef.value)">
-        <label>Type Request</label>
-        <input type="text" name="request" ngModel><br/>
-        <input type="submit" value="Send Request"/>
-        <input type="reset" value="reset"/>
-    </form>
-</div>

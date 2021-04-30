@@ -1,4 +1,13 @@
 <div>
+    <ul>
+        <li><a routerLink="/sendRequest">Send Request</a></li>
+        <li><a routerLink="/orderUpdate">Update Order</a></li>
+        <li><a routerLink="/lockUser">Unlock User</a></li>
+        <li><a routerLink="/changeEmployeePassword">Edit Profile</a></li>
+        <li><a routerLink="">Logout</a></li>
+    </ul>
+</div>
+<div>
     <form #userRef="ngForm" (ngSubmit)="unlockUser(userRef.value)">
         <label>User Id</label>
         <input type="text" name="uid" ngModel/><br/>
@@ -9,7 +18,7 @@
     <form #Ref="ngForm" (ngSubmit)="showLockedUsers()">
         <input type="submit" value="View Locked Users"/>
     </form>
-    <table border="1">
+    <table id="myTable">
             <tr>
                 <th>userID</th>
                 <th>Message</th>

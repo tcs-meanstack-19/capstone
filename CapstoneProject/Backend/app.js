@@ -6,7 +6,8 @@ let cors = require("cors");
 
 
 //Database URL Details 
-let url = "mongodb://localhost:27017/meanstack";
+//let url = "mongodb://localhost:27017/meanstack";
+let url =  "mongodb+srv://grocers-capstone:group19DBs@grocers-cluster.7ad9y.mongodb.net/myFirstDatabase&w=majority";
 
 //middleware enable data from post method.
 app.use(bodyParser.urlencoded({extended:true}));    // enable body part data  

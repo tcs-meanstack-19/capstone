@@ -82,7 +82,7 @@ let unlockUser = (req,res)=>{
 let changePassword = (req,res)=>{
     let eid = req.body.eid;
     let changePass = req.body.password;
-    empModel.updateMany({_id:eid}, {$set:{password:changePass}},(err,result)=>{
+    empModel.updateMany({_id:eid}, {$set:{pwd:changePass}},(err,result)=>{
         if(!err){
             if(result.nModified>0){
                 res.send("Password changed successfully");

@@ -20,8 +20,8 @@ var userSchema = new mongoose.Schema({
 //emp Schema
 var empSchema = new mongoose.Schema({
     _id:Number,
-    name:String,
-    password:String //this is what im dealing with
+    fname:String,
+    pwd:String //this is what im dealing with
 })
 
 //raised ticket Schema
@@ -34,7 +34,7 @@ const requestModel = mongoose.model('requests', requestSchema)
 const orderModel = mongoose.model('orders', orderSchema)
 const userModel = mongoose.model('users', userSchema)
 const empModel = mongoose.model('employees', empSchema)
-const raiseTicketModel = mongoose.model('raisetickets', raiseTicketSchema)
+const raiseTicketModel = mongoose.model('tickets', raiseTicketSchema)
 
 
 module.exports = {requestModel, orderModel, userModel, empModel, raiseTicketModel}
