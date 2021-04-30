@@ -2,6 +2,7 @@ var {requestModel} = require("../model/employee.model");
 var {orderModel} = require("../model/employee.model");
 var {userModel} = require("../model/employee.model");
 var {empModel} = require("../model/employee.model");
+var {raiseTicketModel} = require("../model/employee.model");
 
 let sendRequest = (req,res)=> {
     let request = new requestModel({
@@ -20,6 +21,14 @@ let sendRequest = (req,res)=> {
 
 let viewOrders = (req,res)=>{
     orderModel.find({},(err,result)=>{
+        if(!err){
+            res.json(result);
+        }
+    })
+}
+
+let viewLockedUsers = (req,res)=>{
+    raiseTicketModel.find({},(err,result)=>{
         if(!err){
             res.json(result);
         }
@@ -74,4 +83,4 @@ let changePassword = (req,res)=>{
 }
 
 
-module.exports = {sendRequest, viewOrders, updateOrderStatus, unlockUser, changePassword}
+module.exports = {sendRequest, viewOrders, updateOrderStatus, unlockUser, changePassword, viewLockedUsers}

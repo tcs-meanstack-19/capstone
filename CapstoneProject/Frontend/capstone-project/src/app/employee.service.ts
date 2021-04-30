@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Order } from './model.order';
+import { LockedUsers } from './model.lockedusers';
 
 @Injectable({
   providedIn: 'root'
@@ -25,6 +26,10 @@ export class EmployeeService {
 
   unlockUserStatus(userRef:any):any{
     return this.http.put("http://localhost:9090/employee/unlockUser",userRef,{responseType:'text'})
+  }
+
+  retrieveLockedUsers():Observable<LockedUsers[]>{
+    return this.http.get<LockedUsers[]>("http://localhost:9090/employee/viewLockedUsers")
   }
 
   changeEmployeePassword(empRef:any):any{

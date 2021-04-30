@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from '../employee.service';
+import { LockedUsers } from '../model.lockedusers';
 
 @Component({
   selector: 'app-unlock-user',
@@ -7,7 +8,8 @@ import { EmployeeService } from '../employee.service';
   styleUrls: ['./unlock-user.component.css']
 })
 export class UnlockUserComponent implements OnInit {
-  updateMsg?:string;
+  lockedusers?:Array<LockedUsers>
+  updateMsg?:string; 
   constructor(public employeeSer:EmployeeService) { }
 
   ngOnInit(): void {
@@ -15,9 +17,18 @@ export class UnlockUserComponent implements OnInit {
 
   unlockUser(userRef:any){
     console.log(userRef);
-    this.employeeSer.unlockUserStatus(userRef).subscribe((result:string)=>{
+
+    this.employeeSer.unlockUserStatus(userRef).subscribe((result:any)=>{
       this.updateMsg=result;
+      console.log(this.updateMsg);
     });
   }
+
+  showLockedUsers(){
+    this.employeeSer.retrieveLockedUsers().subscribe(result=>this.lockedusers=result);
+  }
+
+
+
 
 }

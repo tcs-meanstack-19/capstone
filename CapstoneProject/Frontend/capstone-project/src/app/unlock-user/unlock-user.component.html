@@ -6,4 +6,17 @@
         <input type="text" name="status" ngModel/><br/>
         <input type="submit" value="Unlock User"/>
     </form>
+    <form #Ref="ngForm" (ngSubmit)="showLockedUsers()">
+        <input type="submit" value="View Locked Users"/>
+    </form>
+    <table border="1">
+            <tr>
+                <th>userID</th>
+                <th>Message</th>
+            </tr>
+            <tr *ngFor="let lp of lockedusers">
+                    <td>{{lp._id}}</td>
+                    <td>{{lp.msg}}</td>
+            </tr>
+    </table>
 </div>

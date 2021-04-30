@@ -13,7 +13,7 @@ var orderSchema = new mongoose.Schema({
 });
 //user schema
 var userSchema = new mongoose.Schema({
-    _id:Number,
+    _id:String,
     name:String,
     status:String
 });
@@ -24,12 +24,17 @@ var empSchema = new mongoose.Schema({
     password:String //this is what im dealing with
 })
 
+//raised ticket Schema
+var raiseTicketSchema = new mongoose.Schema({
+    _id: String,
+    msg: String
+})
+
 const requestModel = mongoose.model('requests', requestSchema)
 const orderModel = mongoose.model('orders', orderSchema)
 const userModel = mongoose.model('users', userSchema)
 const empModel = mongoose.model('employees', empSchema)
-// var requestModel = mongoose.model("", requestSchema, "Requests");
-// var orderModel = mongoose.model("", orderSchema, "Orders");
+const raiseTicketModel = mongoose.model('raisetickets', raiseTicketSchema)
 
 
-module.exports = {requestModel, orderModel, userModel, empModel}
+module.exports = {requestModel, orderModel, userModel, empModel, raiseTicketModel}
